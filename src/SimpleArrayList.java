@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.*;
 import java.util.Iterator;
 
-public class SimpleArrayList<E> implements ListADT<E>  {
+public class SimpleArrayList<E> implements ListADT<E> {
 
     ArrayList<E> list = new ArrayList<E>();
     private int numItems;
+
 
 
     public SimpleArrayList() {
@@ -17,7 +18,6 @@ public class SimpleArrayList<E> implements ListADT<E>  {
 
         numItems = 0;
     }
-
 
 
     public void add(E item) {
@@ -38,7 +38,7 @@ public class SimpleArrayList<E> implements ListADT<E>  {
         return list.size();
     }
 
-    public E get(int pos){
+    public E get(int pos) {
 
         return list.get(pos);
     }
@@ -66,12 +66,16 @@ public class SimpleArrayList<E> implements ListADT<E>  {
         String returnList = "";
 
         for (int i = 0; i < this.size(); i++) {
+            if (returnList != "") {
+                returnList = returnList + "," + this.get(i);
+            } else {
+                returnList = (String) this.get(i);
 
-             returnList = returnList + " " + this.get(i);
+            }
+
+
 
         }
-
         return returnList;
-
     }
 }

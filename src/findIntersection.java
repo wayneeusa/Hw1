@@ -6,6 +6,7 @@ import java.util.Iterator;
 public class findIntersection {
 
 
+
     public static void main(String[] args){
 
         ListADT<String> list1 = new SimpleArrayList<>();
@@ -17,13 +18,19 @@ public class findIntersection {
         list1.add("A");
         list1.add("B");
         list1.add("C");
-        list1.add("D");
+        list1.add("X");
 
-        list2.add("Z");
+        list2.add("C");
+        list2.add("B");
+        list2.add("A");
+        //list2.add("Z");
+
+
+       /* list2.add("Z");
         list2.add("D");
         list2.add("Y");
         list2.add("B");
-        list2.add("X");
+        list2.add("X"); */
 
         System.out.println(list1.toString());
        System.out.println( intersection(list1, list2).toString());
@@ -45,19 +52,26 @@ public class findIntersection {
 
         SimpleArrayListIterator itr = new SimpleArrayListIterator((SimpleArrayList) list1);
 
-        SimpleArrayListIterator itr2 = new SimpleArrayListIterator((SimpleArrayList) list2);
+
 
         while (itr.hasNext()) {
-            Object nextLetter = itr.next();
-            while (itr2.hasNext()) {
-                Object nextLetter2 = itr2.next();
+            System.out.println("Got here first");
+             Object nextLetter = itr.next();
 
-                if (nextLetter == nextLetter2){
-                    resultList.add((E) nextLetter);
+            SimpleArrayListIterator itr2 = new SimpleArrayListIterator((SimpleArrayList) list2);
+            while (itr2.hasNext()) {
+                System.out.println("Got here");
+               Object nextLetter2 = itr2.next();
+
+                if (nextLetter.equals(nextLetter2)){
+
+                    resultList.add( (E)nextLetter);
+                    break;
                 }
 
 
             }
+
         }
 
             return resultList;
