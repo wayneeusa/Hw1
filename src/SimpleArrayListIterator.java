@@ -4,6 +4,8 @@
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.*;
+import java.lang.*;
 
 public class SimpleArrayListIterator implements Iterator<Object> {
 
@@ -34,8 +36,9 @@ public class SimpleArrayListIterator implements Iterator<Object> {
     /*
     public void remove() {
         throw new UnsupportedOperationException();
+        }
         */
-    }
+
 }
 
 
