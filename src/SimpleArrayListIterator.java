@@ -7,14 +7,14 @@ import java.util.NoSuchElementException;
 import java.util.*;
 import java.lang.*;
 
-public class SimpleArrayListIterator implements Iterator<Object> {
+public class SimpleArrayListIterator<E> implements Iterator<E> {
 
     // *** fields ***
-    private SimpleArrayList list;  // the list we're iterating over
+    private SimpleArrayList<E> list;  // the list we're iterating over
     private int curPos;            // the position of the next item
 
     // *** constructor ***
-    public SimpleArrayListIterator(SimpleArrayList list) {
+    public SimpleArrayListIterator(SimpleArrayList<E> list) {
         this.list = list;
         curPos = 0;
     }
@@ -25,11 +25,11 @@ public class SimpleArrayListIterator implements Iterator<Object> {
         return curPos < list.size();
     }
 
-    public Object next() {
+    public E next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        Object result = list.get(curPos);
+        E result = list.get(curPos);
         curPos++;
         return result;
     }

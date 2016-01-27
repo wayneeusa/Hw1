@@ -32,7 +32,7 @@ public class findIntersection {
         list2.add("B");
         list2.add("X"); */
 
-        System.out.println(list1.toString());
+
        System.out.println( intersection(list1, list2).toString());
 
         //System.out.println(list1);
@@ -50,22 +50,22 @@ public class findIntersection {
 
         ListADT<E> resultList = new SimpleArrayList<E>();
 
-        SimpleArrayListIterator itr = new SimpleArrayListIterator((SimpleArrayList) list1);
+        SimpleArrayListIterator<E> itr = new SimpleArrayListIterator((SimpleArrayList) list1);
 
 
 
         while (itr.hasNext()) {
-            System.out.println("Got here first");
-             Object nextLetter = itr.next();
 
-            SimpleArrayListIterator itr2 = new SimpleArrayListIterator((SimpleArrayList) list2);
+             E nextLetter = itr.next();
+
+            SimpleArrayListIterator<E> itr2 = new SimpleArrayListIterator((SimpleArrayList) list2);
             while (itr2.hasNext()) {
-                System.out.println("Got here");
-               Object nextLetter2 = itr2.next();
+
+               E nextLetter2 = itr2.next();
 
                 if (nextLetter.equals(nextLetter2)){
 
-                    resultList.add( (E)nextLetter);
+                    resultList.add( nextLetter);
                     break;
                 }
 
